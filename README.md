@@ -1,6 +1,17 @@
-# DeepSeek Multi-Head Latent Attention (MLA) Technical Documentation
+# DeepSeek Multi-Head Latent Attention (MLA) – LLM Attention Module Optimization
 
 This document provides a detailed explanation of the DeepSeek multi-head latent attention (MLA) algorithm implementation. It covers the architecture and technology stack, explains the algorithm’s underlying principles, compares MLA with standard multi-head attention (MHA), and outlines key technical details useful for building large language model (LLM) systems.
+
+- Technologies: Python, PyTorch, LLM internals, Low-Rank Approximation, Rotary Positional Embedding, Memory-Efficient Inference
+- Designed and implemented a memory-efficient attention mechanism for long-context large language models, inspired by low-rank adaptation techniques.
+- Implemented a novel multi-head latent attention (MLA) module in PyTorch, replacing standard multi-head attention (MHA) with low-rank compressed KV representations to significantly reduce inference memory footprint.
+- Engineered a two-stage projection pipeline (down-projection + up-projection) for queries and key-values, enabling latent attention computation with minimal performance loss—an approach analogous to LoRA-style low-rank approximation.
+- Developed a decoupled positional embedding mechanism, splitting representations into positional (RoPE) and non-positional (NoPE) components to prevent compression artifacts and improve embedding flexibility.
+- Built and optimized the DeepSeekV2RotaryEmbedding module with precomputed sine/cosine caches, enabling fast and reusable rotary positional encoding during long-sequence inference.
+- Designed a custom RMS normalization layer (DeepSeekV2RMSNorm) that improves numerical stability during training via a learnable scaling factor and per-feature variance computation.
+- Achieved efficient attention computation by combining low-rank compression, RoPE decoupling, and causal masking, leading to significantly faster inference for long-context decoding.
+- Benchmarked MLA against standard MHA, demonstrating comparable or superior model performance with a drastically smaller KV cache—a critical feature for scaling large LLMs on resource-constrained hardware.
+- Ensured high modularity and extensibility of components (e.g., projection heads, rotary embeddings, normalization), enabling rapid experimentation with alternative compression strategies and positional encoding schemes.
 
 ---
 
