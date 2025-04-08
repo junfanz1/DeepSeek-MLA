@@ -33,6 +33,21 @@ This document provides a detailed explanation of the DeepSeek multi-head latent 
 
 DeepSeek’s MLA algorithm is an enhancement over traditional multi-head attention (MHA). Its key innovation is compressing the key–value (KV) representations into low-dimensional latent vectors. This compression reduces the memory footprint of the KV cache during inference while preserving (or even enhancing) model performance. In addition, MLA decouples positional encoding from the main semantic content by splitting the representations into “nope” (non-positional) and “rope” (rotary positional) parts.
 
+An efficient and scalable attention module designed to reduce memory usage and improve inference speed in large language models.
+
+Designed and implemented the Multi-Head Latent Attention (MLA) module as a drop-in replacement for traditional multi-head attention (MHA) in large language models. The project focused on improving inference efficiency and memory scalability without compromising model performance.
+
+Key innovations include:
+
+- Low-Rank Attention Compression: Applied LoRA-style down- and up-projection layers to compress and reconstruct query, key, and value states, drastically reducing KV cache size during long-context inference.
+- Decoupled Positional Embedding: Separated rotary positional information (RoPE) from semantic content (NoPE), preserving attention quality under compression and enabling cleaner representation learning.
+- Custom Rotary Embedding Module: Implemented DeepSeekV2RotaryEmbedding with precomputed sine/cosine caches, optimizing positional encoding for repeated use in long sequences.
+- Memory-Efficient RMS Normalization: Developed DeepSeekV2RMSNorm, a customized normalization layer improving training stability through learnable variance scaling.
+- Optimized Attention Flow: Engineered attention pipeline with causal masking, dropout regularization, and efficient tensor reshaping for scalable inference and autoregressive generation.
+- Modular and Extensible Design: Built all components with modularity in mind, enabling adaptation to different model sizes, hardware constraints, and research directions.
+
+This project showcases deep understanding of transformer internals, low-rank approximation, attention optimization techniques, and engineering best practices for production-ready LLM components.
+
 ---
 
 ## Architecture & Tech Stack
