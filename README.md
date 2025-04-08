@@ -1,4 +1,4 @@
-# MiniGPT and DeepSeek Multi-Head Latent Attention (MLA) – LLM Attention Module Optimization
+# Part 1. DeepSeek Multi-Head Latent Attention (MLA) – LLM Attention Module Optimization
 
 This document provides a detailed explanation of the DeepSeek multi-head latent attention (MLA) algorithm implementation. It covers the architecture and technology stack, explains the algorithm’s underlying principles, compares MLA with standard multi-head attention (MHA), and outlines key technical details useful for building large language model (LLM) systems.
 
@@ -219,7 +219,7 @@ By balancing these aspects, MLA achieves performance that is competitive with (o
 
 ---
 
-# MiniGPT from Scratch: Technical Documentation
+# Part 2. MiniGPT from Scratch: Technical Documentation
 
 This document explains a simplified implementation of the GPT architecture using PyTorch. The code is designed for educational purposes, demonstrating the core components of the Transformer-based language model. It covers the overall architecture, Transformer principles, a comparison with state-of-the-art GPT models, trade-offs, pros and cons, and additional technical details relevant to LLM engineering.
 
@@ -396,7 +396,7 @@ The Transformer architecture is the foundation of GPT models. Key principles inc
 
 ---
 
-## Conclusion
+## MiniGPT Summary
 
 This miniGPT implementation is an excellent starting point for understanding the inner workings of GPT and Transformer-based language models. While it lacks the scale and complexity of the latest GPT models, it offers valuable insights into:
 
