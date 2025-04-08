@@ -1,4 +1,4 @@
-# DeepSeek Multi-Head Latent Attention (MLA) – LLM Attention Module Optimization
+# MiniGPT and DeepSeek Multi-Head Latent Attention (MLA) – LLM Attention Module Optimization
 
 This document provides a detailed explanation of the DeepSeek multi-head latent attention (MLA) algorithm implementation. It covers the architecture and technology stack, explains the algorithm’s underlying principles, compares MLA with standard multi-head attention (MHA), and outlines key technical details useful for building large language model (LLM) systems.
 
